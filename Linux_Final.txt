@@ -1,0 +1,69 @@
+# Создаем две новых директории – «Игрушки для школьников» и «Игрушки для дошколят»
+
+mkdir Toys_for_schoolchildren
+mkdir Toys_for_preschool_children
+
+#  Создаем в директории «Игрушки для школьников» текстовые файлы - «Роботы», «Конструктор», «Настольные игры»
+
+# перейдем в директорию  Toys_for_schoolchildren
+cd Toys_for_schoolchildren/
+
+# создаем текстовые файлы
+
+touch Robots.txt
+touch Constructor.txt
+touch Board_games.txt
+
+#  Создаем в директории «Игрушки для дошколят» текстовые файлы «Мягкие игрушки», «Куклы», «Машинки»
+
+# перейдем в корневую директорию и директорию Toys_for_preschool_children
+
+cd ..
+cd Toys_for_preschool_children/
+
+# создаем текстовые файлы
+
+touch Stuffed_toys.txt
+touch Dolls.txt
+touch Cars.txt
+
+# Объединяем 2 директории в одну «Имя Игрушки»
+
+# создаем новую директорию, куда будут перемещены директории Toys_for_schoolchildren и Toys_for_preschool_children
+mkdir Toys_names
+
+# перемещаем каждую директорию в новую 
+mv Toys_for_schoolchildren/  Toys_names/
+mv Toys_for_preschool_children/  Toys_names/
+
+# Переименовываем директорию «Имя Игрушки» в «Игрушки»
+
+mv Toys_names/ Toys/
+
+# Просмотрим содержимое каталога «Игрушки».
+
+cd Toys/
+
+# вывод содержимого в виде дерева
+
+tree
+
+# Установим и удалим snap-пакет
+
+sudo snap install gimp
+
+snap remove gimp
+
+#  Добавим произвольную задачу для выполнения каждые 3 минуты
+
+# создадим файл Time.txt
+
+touch Time.txt
+
+# настройка планировщика
+
+crontab –e
+
+# в редакторе указываем: каждые 3 минуты дописывать в файл Test.txt текущее время
+
+*/3 * * * * echo `date` /home/katia/Time.txt
